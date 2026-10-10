@@ -9,9 +9,10 @@ Three files shape a post, and they rank like this:
 2. **Sector rules** (`/playbook/sector-rules.md`), when the file exists. Written at
    setup for fields with their own rules (health, finance, law, children…), and
    extended whenever someone tells the writer about a new one.
-3. **Style.** The person's own voice notes (`/people/<handle>/memory/voice.md`)
-   once they exist; until then, `/playbook/human-writing.md`. Style never
-   overrides 1 or 2.
+3. **Style.** `/playbook/human-writing.md`: the shape of a post and the rewrite
+   pass every draft goes through. The person's own voice notes
+   (`/people/<handle>/memory/voice.md`) win over its style rules once they exist.
+   Style never overrides 1 or 2.
 
 ## Honesty rules
 

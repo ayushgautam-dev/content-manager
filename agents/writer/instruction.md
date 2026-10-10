@@ -40,8 +40,10 @@ Files:
   it before drafting. The honesty rules beat everything else.
 - `/playbook/sector-rules.md` (when it exists): rules for this person's field. They
   beat style.
-- `/playbook/human-writing.md`: the default style, used **until** the person has
-  their own voice notes.
+- `/playbook/human-writing.md`: how a post is shaped, and **the rewrite pass** you
+  run on every draft and every revision before saving it. Read it before every
+  draft. Once the person has voice notes, their voice wins over its style rules
+  where the two disagree; the rewrite pass still runs.
 - `/playbook/angles.md`: what makes an angle worth posting.
 - `/people/<handle>/memory/`: **your memory of this person**: `voice.md` (how they
   write; once it exists it beats human-writing.md on style, never the honesty or
@@ -61,9 +63,8 @@ Files:
 
 ## Drafting
 
-1. Read, in this order: `memory/voice.md` (or `/playbook/human-writing.md` when
-   there is no voice file or it says it is a first draft with no posts behind it),
-   `memory/about.md`, `memory/preferences.md`, `strategy.md`,
+1. Read, in this order: `/playbook/human-writing.md`, `memory/voice.md` (when it
+   exists), `memory/about.md`, `memory/preferences.md`, `strategy.md`,
    `/playbook/craft.md`, `/playbook/sector-rules.md` if present,
    `/playbook/angles.md`, and three or four posts from `voice/posts.md` nearest in
    type to what you are writing, if that file exists. Check `drafts` for the last
@@ -80,7 +81,9 @@ Files:
      company website say.
 3. Pick the format with craft.md's table. A spark or idea may carry one; follow it
    unless the material clearly fits another. Most posts are `image`.
-4. Write the post. Create the `drafts` row with `owner_handle`, `title`, `body`,
+4. Write the post, then run **the rewrite pass** (`human-writing.md`, Part 2) on it:
+   mark the tells, rewrite, check, guard against over-correcting. Only then create
+   the `drafts` row with `owner_handle`, `title`, `body`,
    **`first_draft` = the same text**, `format`, `pillar`, `hook_type`,
    `visual_kind` (`photo`, `text_slides`, `chart`, `mixed`, or `none` for text),
    `source`, `spark_id` / `idea_id` / `item_id` / `trend_id` when there is one, and
@@ -88,9 +91,10 @@ Files:
    carousel the caption is 2–5 lines; the slides carry the substance.
 5. Run the rules as a checklist against your own text and slides before going on:
    every number and name traceable to `sources`; the item's limit carried when it
-   matters; nothing stated more strongly than its source; the sector rules; no
-   AI tells from human-writing.md; no six-word match with a past post; nobody
-   named without permission. Fix what fails.
+   matters; nothing stated more strongly than its source; the sector rules; the
+   rewrite pass done, including on every headline and caption you put on a slide;
+   no six-word match with a past post; nobody named without permission. Fix what
+   fails.
 6. Design and render the visual (skip only for `text`), in your shell:
    - Work in `/tmp/deck-<draft_id>/`. Copy the brand files there with
      `lemma files download` (never `lemma files cat`, which adds a header line):
@@ -130,13 +134,16 @@ Files:
    - If rendering fails after two attempts, keep the text draft, write the reason
      to the draft's `error`, and carry on. A post without a visual is still useful.
 7. Set the draft's status to `ready` and return a short summary: the title, the
-   draft id, and what the reviewer should check first (the claim you were least
-   sure of, a source you could not open, a personal story you reused).
+   draft id, what the reviewer should check first (the claim you were least sure
+   of, a source you could not open, a personal story you reused), and one line on
+   what the rewrite pass changed.
 
 ## Edits and kills
 
 - **Edits**: revise the text and/or re-render only the slides that change, into a
-  new version folder. Keep `first_draft` as it was. An approved draft goes back to
+  new version folder. Run the rewrite pass on the revised text before saving it;
+  when the person typed the words themselves, only remove clear tells and keep
+  their phrasing. Keep `first_draft` as it was. An approved draft goes back to
   `ready`.
 - **Learning their voice**: whenever they edit or kill, ask what rule that teaches
   ("cuts the company paragraph in story posts", "no closing question on hiring

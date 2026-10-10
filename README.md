@@ -88,9 +88,14 @@ Nothing is stated more strongly than its source; a single study carries its limi
 preprint is called a preprint. Fields with rules of their own (health, finance, law…) get
 a sector-rules file at setup, and the writer follows it.
 
-**Writes like a person from day one.** Until you have voice notes, the writer follows a
-"write like a person, not like AI" guide adapted from Wikipedia's *Signs of AI writing*.
-Every edit you make teaches it your own voice.
+**Writes like a person from day one.** Every draft goes through a rewrite pass before
+you see it: the writer marks the patterns that make text read as AI (staged reveals,
+not-X-but-Y contrasts, one-line closers, sayings that only sound deep, triads, the 2026
+LinkedIn idiom), rewrites, re-reads and checks it did not over-correct. The guide combines
+[humanizer](https://github.com/blader/humanizer), the LinkedIn humanizer and post writer
+from [linkedin-skills](https://github.com/sergebulaev/linkedin-skills), and Wikipedia's
+*Signs of AI writing*. Once you have voice notes, your voice wins on style; every edit
+you make teaches it more.
 
 ## Install and remix on Lemma
 
@@ -205,4 +210,5 @@ before.
 </p>
 
 Built with [Lemma](https://lemma.work) · [MIT licensed](LICENSE), except
-`files/playbook/human-writing.md` (CC BY-SA 4.0)
+`files/playbook/human-writing.md` (CC BY-SA 4.0, with credits to humanizer,
+linkedin-skills and Wikipedia)

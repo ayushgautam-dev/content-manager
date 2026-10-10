@@ -22,6 +22,9 @@ SOFTWARE.
 
 ---
 
-Exception: files/playbook/human-writing.md is adapted from "Wikipedia:Signs of
-AI writing" by Wikipedia contributors and is licensed CC BY-SA 4.0
-(https://creativecommons.org/licenses/by-sa/4.0/), not MIT.
+Exception: files/playbook/human-writing.md is licensed CC BY-SA 4.0
+(https://creativecommons.org/licenses/by-sa/4.0/), not MIT. It adapts
+"Wikipedia:Signs of AI writing" by Wikipedia contributors (CC BY-SA 4.0), and
+material from humanizer (https://github.com/blader/humanizer, MIT, Copyright (c)
+2025 Siqi Chen) and linkedin-skills (https://github.com/sergebulaev/linkedin-skills,
+MIT, Copyright (c) 2026 Sergey Bulaev), whose notices are kept in that file.
