@@ -39,8 +39,6 @@ export function Ideas() {
     const src = item && sources.find((x) => x.id === item.source_id)
     return src ? `From a ${src.noun_singular}` : FROM.sources
   }
-  const watched = sources.filter((x) => x.active !== false).map((x) => x.noun_plural)
-  const fromWhat = ['the news in your field', ...watched].join(watched.length > 1 ? ', ' : ' and ').replace(/, ([^,]*)$/, ' and $1')
 
   const mine = sparks.filter((s) => me && s.owner_handle === me.handle)
   const day = mine.reduce((d, s) => (s.day > d ? s.day : d), '')
@@ -64,15 +62,13 @@ export function Ideas() {
           </button>
         }
       >
-        {ideas.length
-          ? `${ideas.length} ideas found ${when}, from ${fromWhat}. Pick one and it’s written for you, with its image.`
-          : `Ideas come from ${fromWhat}. Pick one and it’s written for you, with its image.`}
+        {ideas.length ? `${ideas.length} ideas, found ${when}.` : null}
       </PageHead>
       {finding ? (
         <p className="writing">
           <span className="pulse" aria-hidden="true" />
           <span>
-            <strong>The scout is reading your sources and the news.</strong> New ideas appear here in about ten minutes; you can leave this page.
+            <strong>Finding ideas.</strong> About ten minutes; you can leave this page.
           </span>
         </p>
       ) : null}
@@ -109,15 +105,9 @@ export function Ideas() {
           </div>
         </>
       ) : !finding ? (
-        <div className="empty">
+        <div className="empty quiet">
           <strong>No ideas yet</strong>
-          Press “Find new ideas” and the scout reads your sources and the news, then suggests about five posts. It takes around ten minutes.
-          <ol className="how">
-            <li><b>1</b> Your sources and the news come in</li>
-            <li><b>2</b> The scout turns them into post ideas</li>
-            <li><b>3</b> You pick one; the writer drafts it</li>
-            <li><b>4</b> You review and approve</li>
-          </ol>
+          Press <b>Find new ideas</b>: about five arrive in ten minutes, from your sources and the news.
         </div>
       ) : null}
       {me ? <VoiceCard me={me} /> : null}
