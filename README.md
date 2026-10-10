@@ -131,8 +131,9 @@ to say next. About two minutes.
 
 ### Make it sound like you (optional)
 
-A quiet card on the Ideas page hands you to Lemma's own assistant with one sentence
-ready to send. It follows [`files/guide/voice-setup.md`](files/guide/voice-setup.md):
+A quiet card on the Ideas page: press **Set it up** and Studio starts a chat with
+Lemma's own assistant and opens it, already working. The assistant follows
+[`files/guide/voice-setup.md`](files/guide/voice-setup.md):
 
 - **Free:** paste ten or more of your posts, or upload screenshots, and it writes your
   voice notes from them.
