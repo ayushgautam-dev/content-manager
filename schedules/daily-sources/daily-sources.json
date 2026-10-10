@@ -1,0 +1,12 @@
+{
+  "name": "daily-sources",
+  "schedule_type": "TIME",
+  "visibility": "POD",
+  "agent_name": "screener",
+  "config": {
+    "cron": "0 5 * * *",
+    "timezone": "UTC"
+  },
+  "is_active": false,
+  "instruction": "[fetch-items] days 2. Fetch new items for every active source and screen everything pending, exactly as your instruction describes. Nobody is watching: never ask anyone anything."
+}

@@ -1,0 +1,139 @@
+{
+  "name": "scout",
+  "visibility": "POD",
+  "description": "The morning radar: scans the news for the topics each person follows, groups it into stories, and writes each person's daily stream of post ideas from their sources, the news and their own story.",
+  "instruction": {
+    "$file": "instruction.md"
+  },
+  "toolsets": [
+    "WORKSPACE_CLI",
+    "WEB_SEARCH"
+  ],
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "summary": {
+        "type": "string"
+      },
+      "trends": {
+        "type": "integer"
+      },
+      "sparks": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "summary"
+    ]
+  },
+  "permissions": {
+    "grants": [
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "founders",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read"
+        ]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "drafts",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read"
+        ]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "signals",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read",
+          "datastore.record.write"
+        ]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "sparks",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read",
+          "datastore.record.write"
+        ]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "topics",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read",
+          "datastore.record.write"
+        ]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "trends",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read",
+          "datastore.record.write"
+        ]
+      },
+      {
+        "resource_type": "folder",
+        "resource_name": "/playbook",
+        "permission_ids": [
+          "folder.read"
+        ]
+      },
+      {
+        "resource_type": "folder",
+        "resource_name": "/people",
+        "permission_ids": [
+          "folder.read"
+        ]
+      },
+      {
+        "resource_type": "folder",
+        "resource_name": "/radar",
+        "permission_ids": [
+          "folder.read",
+          "folder.write"
+        ]
+      },
+      {
+        "resource_type": "function",
+        "resource_name": "scan_sources",
+        "permission_ids": [
+          "function.execute"
+        ]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "ideas",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read"
+        ]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "source_items",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read",
+          "datastore.record.write"
+        ]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "sources",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read"
+        ]
+      }
+    ]
+  }
+}

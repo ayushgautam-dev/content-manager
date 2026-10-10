@@ -1,0 +1,23 @@
+{
+  "name": "fetch_items",
+  "type": "API",
+  "visibility": "POD",
+  "description": "Fetch new items for each active `sources` row of type `papers` (PubMed, Europe PMC incl. medRxiv/bioRxiv preprints, ClinicalTrials.gov, arXiv) or `feeds` (RSS/Atom URLs and Google News queries), using the search terms stored on the row, and store them in `source_items` as `pending` for the screener. `web` sources are skipped: the screener finds those with web search.",
+  "code": {
+    "$file": "code.py"
+  },
+  "permissions": {
+    "grants": [
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "sources",
+        "permission_ids": ["datastore.record.read", "datastore.table.read", "datastore.record.write"]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "source_items",
+        "permission_ids": ["datastore.record.read", "datastore.table.read", "datastore.record.write"]
+      }
+    ]
+  }
+}

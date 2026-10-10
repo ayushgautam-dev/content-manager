@@ -1,0 +1,64 @@
+{
+  "files": [
+    {
+      "description": "Reads a website's colours, fonts and logo candidates for the setup agent.",
+      "path": "/brand/capture.py",
+      "search_enabled": false,
+      "visibility": "POD"
+    },
+    {
+      "description": "Neutral placeholder logo, replaced at setup.",
+      "path": "/brand/logo.svg",
+      "search_enabled": false,
+      "visibility": "POD"
+    },
+    {
+      "description": "Slide layouts for images and carousels. Its words and numbers are made up.",
+      "path": "/brand/reference-deck.html",
+      "search_enabled": false,
+      "visibility": "POD"
+    },
+    {
+      "description": "Renders a deck of slides from HTML to PNGs, a PDF and a contact sheet.",
+      "path": "/brand/render.py",
+      "search_enabled": false,
+      "visibility": "POD"
+    },
+    {
+      "description": "Studio's colours, fonts and logo. Written by the setup agent; this is the neutral default.",
+      "path": "/brand/theme.json",
+      "search_enabled": false,
+      "visibility": "POD"
+    },
+    {
+      "description": "Slide styles. The BRAND block is rewritten by the setup agent from the person's website.",
+      "path": "/brand/tokens.css",
+      "search_enabled": false,
+      "visibility": "POD"
+    },
+    {
+      "description": "The guide Lemma's assistant follows to build a person's voice notes from their own posts.",
+      "path": "/guide/voice-setup.md",
+      "search_enabled": true,
+      "visibility": "POD"
+    },
+    {
+      "description": "What makes an angle worth posting, and the three streams of ideas.",
+      "path": "/playbook/angles.md",
+      "search_enabled": true,
+      "visibility": "POD"
+    },
+    {
+      "description": "How we write and design: the honesty rules. Read by the writer before every draft.",
+      "path": "/playbook/craft.md",
+      "search_enabled": true,
+      "visibility": "POD"
+    },
+    {
+      "description": "The default writing style until a person has voice notes. Adapted from Wikipedia:Signs of AI writing (CC BY-SA 4.0).",
+      "path": "/playbook/human-writing.md",
+      "search_enabled": true,
+      "visibility": "POD"
+    }
+  ]
+}

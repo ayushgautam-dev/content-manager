@@ -1,0 +1,19 @@
+node_modules/
+dist/
+*.tsbuildinfo
+*.zip
+*.build-aside
+__pycache__/
+.DS_Store
+
+# Machine-local bindings: which pod, which deployment, which token.
+scripts/local.env
+.lemma.env
+.lemma.*.env
+.env
+.env.local
+.env.*.local
+
+# Local working notes and editor/agent config
+PLAN.md
+.claude/

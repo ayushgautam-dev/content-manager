@@ -1,0 +1,23 @@
+{
+  "name": "fetch_linkedin_posts",
+  "type": "JOB",
+  "visibility": "POD",
+  "description": "Fetch a person's own recent LinkedIn posts through a scraper key the person connected (Monid or Apify, each an OpenAPI connection in Lemma). Writes /people/<handle>/voice/posts.md and posts.json, and saves the images from their own posts under /people/<handle>/voice/images/. With estimate_only it calls nothing and returns the most it could cost. Costs money: say the estimate and get a yes before running it for real. Ships with no key.",
+  "code": {
+    "$file": "code.py"
+  },
+  "permissions": {
+    "grants": [
+      {
+        "resource_type": "connector",
+        "resource_name": "openapi",
+        "permission_ids": ["connector.use"]
+      },
+      {
+        "resource_type": "folder",
+        "resource_name": "/people",
+        "permission_ids": ["folder.read", "folder.write"]
+      }
+    ]
+  }
+}

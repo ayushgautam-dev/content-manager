@@ -1,0 +1,91 @@
+{
+  "name": "ideas",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "visibility": "POD",
+  "columns": [
+    {
+      "max_length": 4000,
+      "name": "text",
+      "required": true,
+      "type": "TEXT"
+    },
+    {
+      "default": "manual",
+      "name": "source",
+      "options": [
+        "manual",
+        "news",
+        "past_post"
+      ],
+      "required": true,
+      "type": "ENUM"
+    },
+    {
+      "max_length": 500,
+      "name": "source_ref",
+      "type": "TEXT"
+    },
+    {
+      "name": "owner",
+      "type": "USER"
+    },
+    {
+      "max_length": 40,
+      "name": "owner_handle",
+      "type": "TEXT"
+    },
+    {
+      "default": "new",
+      "name": "status",
+      "options": [
+        "new",
+        "planned",
+        "drafted",
+        "used",
+        "parked",
+        "dropped"
+      ],
+      "required": true,
+      "type": "ENUM"
+    },
+    {
+      "max_length": 120,
+      "name": "pillar",
+      "type": "TEXT"
+    },
+    {
+      "max_length": 1000,
+      "name": "proof",
+      "type": "TEXT"
+    },
+    {
+      "name": "fresh_until",
+      "type": "DATETIME"
+    },
+    {
+      "name": "planned_for",
+      "type": "DATE"
+    },
+    {
+      "name": "planned_format",
+      "options": [
+        "text",
+        "image",
+        "carousel",
+        "video"
+      ],
+      "type": "ENUM"
+    },
+    {
+      "name": "score",
+      "type": "FLOAT"
+    },
+    {
+      "max_length": 1000,
+      "name": "why",
+      "type": "TEXT"
+    }
+  ],
+  "config": {}
+}

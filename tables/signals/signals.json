@@ -1,0 +1,79 @@
+{
+  "name": "signals",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "visibility": "POD",
+  "columns": [
+    {
+      "name": "topic_id",
+      "type": "UUID"
+    },
+    {
+      "name": "source",
+      "options": [
+        "news",
+        "reddit",
+        "web"
+      ],
+      "required": true,
+      "type": "ENUM"
+    },
+    {
+      "max_length": 600,
+      "name": "url",
+      "required": true,
+      "type": "TEXT",
+      "unique": true
+    },
+    {
+      "max_length": 500,
+      "name": "title",
+      "type": "TEXT"
+    },
+    {
+      "max_length": 200,
+      "name": "author",
+      "type": "TEXT"
+    },
+    {
+      "max_length": 2000,
+      "name": "excerpt",
+      "type": "TEXT"
+    },
+    {
+      "name": "score",
+      "type": "INTEGER"
+    },
+    {
+      "name": "comments",
+      "type": "INTEGER"
+    },
+    {
+      "name": "published_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "relevance",
+      "type": "FLOAT"
+    },
+    {
+      "name": "trend_id",
+      "type": "UUID"
+    },
+    {
+      "default": "new",
+      "name": "status",
+      "options": [
+        "new",
+        "clustered",
+        "ignored"
+      ],
+      "type": "ENUM"
+    },
+    {
+      "name": "raw",
+      "type": "JSON"
+    }
+  ],
+  "config": {}
+}

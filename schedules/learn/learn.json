@@ -1,0 +1,23 @@
+{
+  "name": "learn",
+  "schedule_type": "DATASTORE",
+  "visibility": "POD",
+  "agent_name": "writer",
+  "config": {
+    "operations": [
+      "UPDATE"
+    ],
+    "table_name": "drafts",
+    "when": {
+      "status": {
+        "changed": true,
+        "in": [
+          "approved",
+          "killed"
+        ]
+      }
+    }
+  },
+  "is_active": true,
+  "instruction": "[learn] A draft was just approved or killed (the row is in this message). Compare first_draft with body, read kill_reason and source, and update that person's voice.md as the Learning section of your instruction says. Nobody is watching: never ask, never message, never change the draft. If nothing new was learned, write nothing."
+}

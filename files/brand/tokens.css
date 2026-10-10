@@ -1,0 +1,150 @@
+/* The look for LinkedIn images and carousels. Decks link this file (copied next
+   to the deck); change it here and every future deck follows. A reference, not a
+   cage: a deck may add its own styles on top.
+
+   The block between BRAND START and BRAND END is written by the setup agent from
+   the person's website (colours, fonts). Everything below it only uses the
+   variables, so restyling a brand means rewriting that one block. Until setup
+   runs, the neutral default below applies. */
+
+/* BRAND START */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=block");
+
+:root {
+  --paper: #fbfaf7;        /* slide background */
+  --paper-2: #f1efe9;      /* second light background */
+  --ink: #15171c;          /* main text, dark slides */
+  --ink-2: #3a3f4a;        /* body text */
+  --muted: #6b7180;        /* small print */
+  --accent: #2f5bea;       /* the one brand colour: highlights, numbers */
+  --accent-ink: #ffffff;   /* text on the accent colour */
+  --accent-soft: #9db4ff;  /* the accent, readable on dark slides */
+  --accent-2: #f2b33d;     /* a second accent, used sparingly */
+  --line: #dedbd2;
+  --alert: #c8321f;        /* news source-card frame */
+
+  --display: "Fraunces", Georgia, serif;   /* headlines */
+  --font: "Inter", system-ui, sans-serif;  /* body and labels */
+  --display-weight: 400;
+  --display-tracking: -0.015em;
+}
+/* BRAND END */
+
+:root {
+  --slide-w: 1080px;
+  --slide-h: 1350px;
+  --pad: 88px;
+  /* Type scale for a 1080px slide read on a phone (~1/3 size): nothing under 30px. */
+  --t-hero: 118px;
+  --t-h1: 88px;
+  --t-h2: 76px;
+  --t-body: 48px;
+  --t-small: 33px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #555; }
+body { font-family: var(--font); font-weight: 500; color: var(--ink); }
+
+section.slide {
+  position: relative; width: var(--slide-w); height: var(--slide-h); padding: var(--pad);
+  background: var(--paper); overflow: hidden; display: flex; flex-direction: column;
+}
+section.slide.dark { background: var(--ink); color: var(--paper); }
+section.slide.accent { background: var(--accent); color: var(--accent-ink); }
+section.slide.sand { background: var(--paper-2); }
+
+.hero { font: var(--display-weight) var(--t-hero)/1.0 var(--display); letter-spacing: var(--display-tracking); margin: 0; }
+.h1 { font: var(--display-weight) var(--t-h1)/1.04 var(--display); letter-spacing: var(--display-tracking); margin: 0; }
+.h2 { font: var(--display-weight) var(--t-h2)/1.1 var(--display); letter-spacing: var(--display-tracking); margin: 0; }
+.body { font-size: var(--t-body); line-height: 1.34; color: var(--ink-2); margin: 0; }
+.dark .body, .accent .body { color: inherit; opacity: 0.88; }
+.small { font-size: var(--t-small); line-height: 1.35; color: var(--muted); margin: 0; }
+.dark .small, .accent .small { color: inherit; opacity: 0.7; }
+.kicker { font: 600 var(--t-small)/1.2 var(--font); letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin: 0; }
+.dark .kicker { color: var(--accent-soft); } .accent .kicker { color: var(--accent-2); }
+.em { font-style: italic; }
+.mark { color: var(--accent); } .dark .mark { color: var(--accent-soft); } .accent .mark { color: var(--accent-2); }
+.hl { background: var(--accent); color: var(--accent-ink); padding: 0 14px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.dark .hl { background: var(--accent-soft); color: var(--ink); }
+.spacer { flex: 1; }
+.rule { height: 2px; background: currentColor; opacity: 0.18; margin: 40px 0; }
+
+/* Content slides fill the frame: put a <div class="spacer"></div> between the
+   heading and the body, or wrap the body in .fill, so nothing floats in the top third. */
+.fill { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-bottom: 90px; }
+
+/* Footer: the wordmark on the left, the page count on the right. */
+.foot {
+  position: absolute; left: var(--pad); right: var(--pad); bottom: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: var(--t-small); color: var(--muted);
+}
+.dark .foot, .accent .foot { color: inherit; opacity: 0.75; }
+.wordmark { font: 600 36px/1 var(--font); letter-spacing: 0.02em; color: var(--ink); }
+/* The logo: copy /brand/logo.* next to the deck. On dark or photo slides use the
+   light version (logo-light.*) when setup made one. */
+.logo { height: 52px; width: auto; display: block; }
+.dark .wordmark, .accent .wordmark, .photo .wordmark { color: #fff; }
+.author { display: flex; align-items: center; gap: 18px; }
+.author img { width: 68px; height: 68px; border-radius: 50%; object-fit: cover; }
+.swipe::after { content: "  →"; }
+
+/* A big number with its label: the one figure a slide is about. */
+.stat { font: 400 260px/0.9 var(--display); letter-spacing: -0.03em; margin: 0; color: var(--accent); }
+.dark .stat { color: var(--accent-soft); } .accent .stat { color: var(--accent-ink); }
+.stat small { font-size: 0.42em; letter-spacing: 0; }
+
+/* Numbered points, 3 or 4 to a slide. */
+.points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 46px; }
+.points li { display: flex; gap: 28px; align-items: baseline; font-size: var(--t-body); line-height: 1.28; }
+.points li b { font: 400 84px/0.9 var(--display); color: var(--accent); min-width: 76px; }
+.dark .points li b { color: var(--accent-soft); }
+
+/* Source card: the real paper title or news headline, typed, never a doctored screenshot. */
+.source-card {
+  background: #fff; color: #101312; border-radius: 12px; padding: 26px 34px 30px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+.source-card.news { border: 3px solid var(--alert); text-align: center; }
+.source-card .outlet { font: 600 30px/1.2 var(--font); color: #5b6360; margin-bottom: 12px; }
+.source-card .outlet b { color: var(--alert); font-weight: 700; }
+.source-card .headline { font: 700 43px/1.16 var(--font); letter-spacing: -0.01em; }
+.source-card .sub { font: 500 30px/1.3 var(--font); color: #5b6360; margin-top: 12px; }
+
+/* The caveat line research slides carry: study type and the limit, in plain words. */
+.caveat.big { font-size: var(--t-body); line-height: 1.34; padding-left: 30px; border-left-width: 6px; }
+.caveat { font-size: var(--t-small); line-height: 1.35; color: var(--muted); border-left: 4px solid var(--accent-2); padding-left: 22px; margin: 0; }
+.dark .caveat { color: inherit; opacity: 0.8; }
+
+/* Photo slide: the founder's portrait full-bleed, source card on top, caption at the bottom.
+   <section class="slide photo"><img class="bg" src="data:image/jpeg;base64,…"> … */
+section.slide.photo { padding: 44px 24px 56px; background: #16201b; color: #fff; }
+section.slide.photo .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; }
+section.slide.photo::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 48%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.82) 36%, rgba(0, 0, 0, 0) 100%);
+}
+section.slide.photo > * { position: relative; z-index: 2; }
+section.slide.photo > .bg { position: absolute; z-index: 0; }
+.caption { text-align: center; padding: 0 16px; }
+.caption .hl { font: 400 68px/1.36 var(--display); padding: 2px 16px; }
+.caption .plain { display: block; margin-top: 14px; font: 700 52px/1.2 var(--font); color: #fff; }
+
+/* Bars for simple charts built in HTML, from real numbers only. */
+.bars { display: flex; align-items: flex-end; gap: 28px; height: 520px; }
+.bars .bar { flex: 1; background: var(--line); border-radius: 14px 14px 4px 4px; position: relative; }
+.bars .bar.on { background: var(--accent); }
+.dark .bars .bar { background: rgba(255, 255, 255, 0.16); } .dark .bars .bar.on { background: var(--accent-soft); }
+.bars .bar span { position: absolute; top: -58px; left: 0; right: 0; text-align: center; font: 600 36px/1 var(--font); color: var(--ink-2); }
+.dark .bars .bar span { color: inherit; }
+.bars + .labels { display: flex; gap: 28px; margin-top: 18px; }
+.labels div { flex: 1; text-align: center; font-size: var(--t-small); color: var(--muted); }
+.dark .labels div { color: inherit; opacity: 0.7; }
+
+/* Type-only image: the default single image until the person has photos.
+   A source card or kicker on top, the point as a big headline, one line under it. */
+section.slide.type-image .headline-big { font: var(--display-weight) 104px/1.02 var(--display); letter-spacing: var(--display-tracking); margin: 0; }
+section.slide.type-image .under { font-size: var(--t-body); line-height: 1.3; color: var(--ink-2); margin: 40px 0 0; }
+section.slide.dark.type-image .under, section.slide.accent.type-image .under { color: inherit; opacity: 0.88; }
+.byline { display: flex; align-items: center; gap: 18px; font: 600 var(--t-small)/1.2 var(--font); }

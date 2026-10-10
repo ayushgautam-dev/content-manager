@@ -1,0 +1,15 @@
+{
+  "name": "setup_jobs",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "visibility": "POD",
+  "columns": [
+    {"name": "job", "type": "ENUM", "options": ["brand", "sources", "rules", "notes", "ideas"], "required": true},
+    {"name": "owner_handle", "type": "TEXT", "max_length": 40},
+    {"name": "status", "type": "ENUM", "options": ["waiting", "working", "done", "failed"], "default": "waiting", "required": true},
+    {"name": "note", "type": "TEXT", "max_length": 600},
+    {"name": "started_at", "type": "DATETIME"},
+    {"name": "finished_at", "type": "DATETIME"}
+  ],
+  "config": {}
+}

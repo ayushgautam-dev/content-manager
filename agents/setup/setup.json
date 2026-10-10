@@ -1,0 +1,40 @@
+{
+  "name": "setup",
+  "visibility": "POD",
+  "description": "Sets up the pod for a new person from their onboarding answers: reads their website for brand colours, fonts and logo and restyles the slides and Studio; writes the news topics and the sources they asked for; writes sector rules when their field needs them; and writes first-draft strategy and about notes. Reports progress in setup_jobs.",
+  "instruction": {
+    "$file": "instruction.md"
+  },
+  "toolsets": [
+    "WORKSPACE_CLI",
+    "WEB_SEARCH",
+    "SUBAGENTS"
+  ],
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "summary": {"type": "string"},
+      "brand": {"type": "string"},
+      "topics": {"type": "integer"},
+      "sources": {"type": "integer"},
+      "sector_rules": {"type": "boolean"}
+    },
+    "required": ["summary"]
+  },
+  "permissions": {
+    "grants": [
+      {"resource_type": "datastore_table", "resource_name": "founders", "permission_ids": ["datastore.record.read", "datastore.table.read", "datastore.record.write"]},
+      {"resource_type": "datastore_table", "resource_name": "setup_jobs", "permission_ids": ["datastore.record.read", "datastore.table.read", "datastore.record.write"]},
+      {"resource_type": "datastore_table", "resource_name": "topics", "permission_ids": ["datastore.record.read", "datastore.table.read", "datastore.record.write"]},
+      {"resource_type": "datastore_table", "resource_name": "sources", "permission_ids": ["datastore.record.read", "datastore.table.read", "datastore.record.write"]},
+      {"resource_type": "datastore_table", "resource_name": "source_items", "permission_ids": ["datastore.record.read", "datastore.table.read"]},
+      {"resource_type": "datastore_table", "resource_name": "signals", "permission_ids": ["datastore.record.read", "datastore.table.read"]},
+      {"resource_type": "folder", "resource_name": "/brand", "permission_ids": ["folder.read", "folder.write"]},
+      {"resource_type": "folder", "resource_name": "/playbook", "permission_ids": ["folder.read", "folder.write"]},
+      {"resource_type": "folder", "resource_name": "/people", "permission_ids": ["folder.read", "folder.write"]},
+      {"resource_type": "function", "resource_name": "fetch_items", "permission_ids": ["function.execute"]},
+      {"resource_type": "function", "resource_name": "scan_sources", "permission_ids": ["function.execute"]},
+      {"resource_type": "agent", "resource_name": "screener", "permission_ids": ["agent.execute"]}
+    ]
+  }
+}

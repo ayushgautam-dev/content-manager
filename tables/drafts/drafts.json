@@ -1,0 +1,160 @@
+{
+  "name": "drafts",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "visibility": "POD",
+  "columns": [
+    {
+      "max_length": 200,
+      "name": "title",
+      "required": true,
+      "type": "TEXT"
+    },
+    {
+      "max_length": 3000,
+      "name": "body",
+      "type": "TEXT"
+    },
+    {
+      "max_length": 3000,
+      "name": "first_draft",
+      "type": "TEXT"
+    },
+    {
+      "default": "drafting",
+      "name": "status",
+      "options": [
+        "drafting",
+        "ready",
+        "approved",
+        "posted",
+        "killed"
+      ],
+      "required": true,
+      "type": "ENUM"
+    },
+    {
+      "default": "text",
+      "name": "format",
+      "options": [
+        "text",
+        "image",
+        "carousel",
+        "video"
+      ],
+      "required": true,
+      "type": "ENUM"
+    },
+    {
+      "name": "approved_at",
+      "type": "DATETIME"
+    },
+    {
+      "max_length": 300,
+      "name": "deck_dir",
+      "type": "TEXT"
+    },
+    {
+      "name": "slides",
+      "type": "JSON"
+    },
+    {
+      "max_length": 300,
+      "name": "pdf_path",
+      "type": "FILE_PATH"
+    },
+    {
+      "max_length": 300,
+      "name": "sheet_path",
+      "type": "FILE_PATH"
+    },
+    {
+      "max_length": 120,
+      "name": "pillar",
+      "type": "TEXT"
+    },
+    {
+      "name": "hook_type",
+      "options": [
+        "number",
+        "story",
+        "contrarian",
+        "question",
+        "how_to",
+        "announcement",
+        "lesson",
+        "other"
+      ],
+      "type": "ENUM"
+    },
+    {
+      "default": "none",
+      "name": "visual_kind",
+      "options": [
+        "none",
+        "text_slides",
+        "proof_card",
+        "chart",
+        "screenshot",
+        "photo",
+        "mixed"
+      ],
+      "type": "ENUM"
+    },
+    {
+      "default": "manual",
+      "name": "source",
+      "options": [
+        "source",
+        "news",
+        "you",
+        "manual"
+      ],
+      "type": "ENUM"
+    },
+    {
+      "name": "idea_id",
+      "type": "UUID"
+    },
+    {
+      "max_length": 500,
+      "name": "kill_reason",
+      "type": "TEXT"
+    },
+    {
+      "max_length": 2000,
+      "name": "error",
+      "type": "TEXT"
+    },
+    {
+      "name": "spark_id",
+      "type": "UUID"
+    },
+    {
+      "name": "owner_handle",
+      "type": "TEXT",
+      "max_length": 40
+    },
+    {
+      "name": "item_id",
+      "type": "UUID"
+    },
+    {
+      "name": "sources",
+      "type": "JSON"
+    },
+    {
+      "name": "posted_url",
+      "type": "TEXT"
+    },
+    {
+      "name": "request",
+      "type": "TEXT"
+    },
+    {
+      "name": "trend_id",
+      "type": "UUID"
+    }
+  ],
+  "config": {}
+}

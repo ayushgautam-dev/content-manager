@@ -1,0 +1,134 @@
+{
+  "name": "founders",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "visibility": "POD",
+  "columns": [
+    {
+      "name": "member",
+      "type": "USER",
+      "unique": true
+    },
+    {
+      "max_length": 40,
+      "name": "handle",
+      "required": true,
+      "type": "TEXT",
+      "unique": true
+    },
+    {
+      "max_length": 120,
+      "name": "display_name",
+      "type": "TEXT"
+    },
+    {
+      "max_length": 200,
+      "name": "email",
+      "type": "TEXT"
+    },
+    {
+      "max_length": 120,
+      "name": "linkedin_name",
+      "type": "TEXT"
+    },
+    {
+      "max_length": 500,
+      "name": "goal_note",
+      "type": "TEXT"
+    },
+    {
+      "name": "pillars",
+      "type": "JSON"
+    },
+    {
+      "default": "UTC",
+      "max_length": 60,
+      "name": "timezone",
+      "type": "TEXT"
+    },
+    {
+      "default": "started",
+      "name": "onboarding",
+      "options": [
+        "started",
+        "setting_up",
+        "done"
+      ],
+      "type": "ENUM"
+    },
+    {
+      "default": "active",
+      "name": "status",
+      "options": [
+        "active",
+        "paused"
+      ],
+      "type": "ENUM"
+    },
+    {
+      "max_length": 300,
+      "name": "linkedin_headline",
+      "type": "TEXT"
+    },
+    {
+      "name": "followers",
+      "type": "INTEGER"
+    },
+    {
+      "name": "linkedin_url",
+      "type": "TEXT"
+    },
+    {
+      "name": "sparks_per_day",
+      "type": "INTEGER",
+      "default": 5
+    },
+    {
+      "name": "company_name",
+      "type": "TEXT",
+      "max_length": 120
+    },
+    {
+      "name": "website",
+      "type": "TEXT",
+      "max_length": 300
+    },
+    {
+      "name": "company_linkedin_url",
+      "type": "TEXT",
+      "max_length": 300
+    },
+    {
+      "name": "writes_about",
+      "type": "TEXT",
+      "max_length": 2000
+    },
+    {
+      "name": "wants_daily",
+      "type": "TEXT",
+      "max_length": 2000
+    },
+    {
+      "name": "anything_else",
+      "type": "TEXT",
+      "max_length": 2000
+    },
+    {
+      "name": "region",
+      "type": "TEXT",
+      "max_length": 10,
+      "default": "US"
+    },
+    {
+      "name": "voice_status",
+      "type": "ENUM",
+      "options": [
+        "none",
+        "building",
+        "ready"
+      ],
+      "default": "none"
+    }
+  ],
+  "config": {}
+}

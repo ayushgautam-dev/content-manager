@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reference deck</title>
+<!-- Copy tokens.css and the logo (as logo.svg or logo.png) next to the deck before
+     rendering. EVERY NUMBER, NAME AND CLAIM IN THIS FILE IS MADE UP to show
+     layouts. Never reuse them in a real post: real decks use real numbers or none.
+
+     Two kinds of visual:
+     - a SINGLE IMAGE: one slide (A, B or C), saved as an image post;
+     - a CAROUSEL: a cover (A, B, C or D) plus 4-8 content slides. -->
+<link rel="stylesheet" href="tokens.css">
+</head>
+<body>
+
+<!-- A. Type-only image with a news source card. The default single image. -->
+<section class="slide type-image">
+  <div class="source-card news">
+    <div class="outlet"><b>Outlet name</b> | Section</div>
+    <div class="headline">The outlet's real headline, exactly as published</div>
+  </div>
+  <div class="spacer"></div>
+  <p class="headline-big">The point of the post, in <span class="mark">nine words</span> or so.</p>
+  <p class="under">One line that gives the twist or the number.</p>
+  <div class="spacer"></div>
+  <div class="foot"><span class="byline">Person Name · Company</span><img class="logo" src="logo.svg" alt=""></div>
+</section>
+
+<!-- B. Type-only image with a kicker, on a dark background. -->
+<section class="slide dark type-image">
+  <p class="kicker">What changed this week</p>
+  <div class="spacer"></div>
+  <p class="headline-big">A rule nobody noticed <span class="mark em">moves the deadline</span> by a year.</p>
+  <p class="under">And most teams planned for the old one.</p>
+  <div class="spacer"></div>
+  <div class="foot"><span class="byline">Person Name · Company</span><span class="wordmark">COMPANY</span></div>
+</section>
+
+<!-- C. Photo slide: only when /brand/portraits/<handle>/ has photos the person
+     posted themselves. The photo is embedded as a data URI so the deck stays one file. -->
+<section class="slide photo">
+  <!-- <img class="bg" src="data:image/jpeg;base64,..."> -->
+  <div class="source-card">
+    <div class="outlet"><b>Publisher</b> | Section</div>
+    <div class="headline">The real title or headline, exactly as published</div>
+  </div>
+  <div class="spacer"></div>
+  <div class="caption">
+    <span class="hl">The point in plain words,</span><br>
+    <span class="hl">with its one number</span>
+    <span class="plain">and the twist</span>
+  </div>
+</section>
+
+<!-- D. Type cover, for a carousel. -->
+<section class="slide dark">
+  <p class="kicker">Explained</p>
+  <div class="spacer"></div>
+  <p class="hero">A simple number can hide <span class="mark em">a slow problem.</span></p>
+  <p class="body" style="margin-top:40px">What the report measured, in five slides.</p>
+  <div class="spacer"></div>
+  <div class="foot"><span class="wordmark">COMPANY</span><span class="swipe">1/6</span></div>
+</section>
+
+<!-- E. The one number. -->
+<section class="slide">
+  <p class="kicker">What they found</p>
+  <div class="spacer"></div>
+  <p class="stat">64<small>%</small></p>
+  <p class="h2" style="margin-top:28px">of teams in the survey had the problem before they noticed it.</p>
+  <div class="spacer"></div>
+  <p class="caveat">One survey, 400 companies, one country. A snapshot, not a trend.</p>
+  <div style="height:90px"></div>
+  <div class="foot"><img class="logo" src="logo.svg" alt=""><span class="swipe">2/6</span></div>
+</section>
+
+<!-- F. One point per slide. -->
+<section class="slide sand">
+  <p class="kicker">01</p>
+  <div class="fill">
+    <p class="h1">The dashboard can look fine for months.</p>
+    <p class="body" style="margin-top:44px">The average holds steady while the cost moves somewhere nobody is measuring.</p>
+  </div>
+  <div class="foot"><img class="logo" src="logo.svg" alt=""><span class="swipe">3/6</span></div>
+</section>
+
+<!-- G. Three or four points. -->
+<section class="slide">
+  <p class="kicker">What to check</p>
+  <p class="h2" style="margin:28px 0 0">Three questions worth asking this week</p>
+  <div class="fill"><ul class="points">
+    <li><b>1</b><span>Whether the number was measured at all.</span></li>
+    <li><b>2</b><span>How it compares with last year, not just the target.</span></li>
+    <li><b>3</b><span>What else was read alongside it.</span></li>
+  </ul></div>
+  <div class="foot"><img class="logo" src="logo.svg" alt=""><span class="swipe">4/6</span></div>
+</section>
+
+<!-- H. The limit, on its own slide when a carousel walks through a study, a survey or a forecast. -->
+<section class="slide dark">
+  <p class="kicker">The limit</p>
+  <p class="h2" style="margin-top:28px">What this cannot tell you</p>
+  <div class="fill"><p class="caveat big">It asked people and recorded answers; it did not test anything. It covers one market. It describes a group, not your company.</p></div>
+  <div class="foot"><span class="wordmark">COMPANY</span><span class="swipe">5/7</span></div>
+</section>
+
+<!-- I. A chart from real numbers. -->
+<section class="slide dark">
+  <p class="kicker">Over time</p>
+  <p class="h2" style="margin-top:24px">Share of teams with the problem, by year</p>
+  <div class="spacer"></div>
+  <div class="bars">
+    <div class="bar" style="height:22%"><span>12%</span></div>
+    <div class="bar" style="height:48%"><span>27%</span></div>
+    <div class="bar on" style="height:100%"><span>56%</span></div>
+  </div>
+  <div class="labels"><div>2024</div><div>2025</div><div>2026</div></div>
+  <div style="height:120px"></div>
+  <div class="foot"><span class="wordmark">COMPANY</span><span class="swipe">5/6</span></div>
+</section>
+
+<!-- J. Close: the takeaway and one real question. -->
+<section class="slide accent">
+  <div class="spacer"></div>
+  <p class="h1">Steady is not the same as healthy.</p>
+  <p class="body" style="margin-top:44px">When did you last check the number nobody reports?</p>
+  <div class="spacer"></div>
+  <div class="foot"><span class="author"><span>Person Name · Company</span></span><span>6/6</span></div>
+</section>
+
+</body>
+</html>

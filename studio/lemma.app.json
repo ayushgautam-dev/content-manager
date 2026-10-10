@@ -1,0 +1,10 @@
+{
+  "name": "content-manager",
+  "title": "Content Studio",
+  "template": "lemma-vite",
+  "runtime": {
+    "apiUrl": "https://api.lemma.work",
+    "authUrl": "https://lemma.work/auth",
+    "appBasePath": "/"
+  }
+}

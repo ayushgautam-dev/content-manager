@@ -1,0 +1,68 @@
+{
+  "name": "topics",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "visibility": "POD",
+  "columns": [
+    {
+      "max_length": 120,
+      "name": "name",
+      "required": true,
+      "type": "TEXT",
+      "unique": true
+    },
+    {
+      "max_length": 1000,
+      "name": "angle",
+      "type": "TEXT"
+    },
+    {
+      "name": "region",
+      "type": "TEXT",
+      "max_length": 10,
+      "default": "US"
+    },
+    {
+      "name": "language",
+      "type": "TEXT",
+      "max_length": 10,
+      "default": "en"
+    },
+    {
+      "max_length": 40,
+      "name": "owner_handle",
+      "type": "TEXT"
+    },
+    {
+      "name": "keywords",
+      "type": "JSON"
+    },
+    {
+      "default": true,
+      "name": "news",
+      "type": "BOOLEAN"
+    },
+    {
+      "name": "reddit",
+      "type": "JSON"
+    },
+    {
+      "name": "web",
+      "type": "JSON"
+    },
+    {
+      "default": true,
+      "name": "active",
+      "type": "BOOLEAN"
+    },
+    {
+      "name": "last_scanned_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "last_scan",
+      "type": "JSON"
+    }
+  ],
+  "config": {}
+}

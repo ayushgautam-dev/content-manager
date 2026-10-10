@@ -1,0 +1,12 @@
+{
+  "name": "daily-radar",
+  "schedule_type": "TIME",
+  "visibility": "POD",
+  "agent_name": "scout",
+  "config": {
+    "cron": "0 6 * * *",
+    "timezone": "UTC"
+  },
+  "is_active": false,
+  "instruction": "[daily-radar] Run the morning radar exactly as your instruction describes: scan, add web results, judge, group into today's stories, write every active person's stream, write the digest. Nobody is watching: never ask anyone anything."
+}

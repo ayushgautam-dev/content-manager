@@ -1,0 +1,28 @@
+{
+  "name": "source_items",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "visibility": "POD",
+  "columns": [
+    {"name": "source_id", "type": "UUID", "required": true},
+    {"name": "external_id", "type": "TEXT", "required": true, "unique": true, "max_length": 300},
+    {"name": "title", "type": "TEXT", "required": true},
+    {"name": "url", "type": "TEXT"},
+    {"name": "publisher", "type": "TEXT", "max_length": 200},
+    {"name": "authors", "type": "JSON"},
+    {"name": "published_at", "type": "DATETIME"},
+    {"name": "fetched_at", "type": "DATETIME"},
+    {"name": "excerpt", "type": "TEXT"},
+    {"name": "status", "type": "ENUM", "options": ["pending", "new", "sparked", "drafted", "skipped", "rejected"], "default": "pending", "required": true},
+    {"name": "headline", "type": "TEXT"},
+    {"name": "summary", "type": "TEXT"},
+    {"name": "why_it_matters", "type": "TEXT"},
+    {"name": "limits_note", "type": "TEXT"},
+    {"name": "item_type", "type": "TEXT", "max_length": 60},
+    {"name": "quality_score", "type": "INTEGER"},
+    {"name": "relevance_score", "type": "INTEGER"},
+    {"name": "rejection_reason", "type": "TEXT"},
+    {"name": "evaluated_at", "type": "DATETIME"}
+  ],
+  "config": {}
+}

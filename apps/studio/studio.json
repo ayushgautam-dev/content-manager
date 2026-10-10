@@ -1,0 +1,6 @@
+{
+  "name": "studio",
+  "description": "Content Studio: onboarding, today's post ideas from your sources and the news, drafts with images in your brand, review and approval.",
+  "public_slug": "${studio_slug}",
+  "visibility": "POD"
+}

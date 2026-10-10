@@ -1,0 +1,51 @@
+{
+  "name": "screener",
+  "visibility": "POD",
+  "description": "Brings in new items for each source the person follows (studies, launches, rulings, filings…) and screens each one against that source's own standard: keeps what is worth a post with a plain headline, a short summary and its limits; rejects the rest with a reason.",
+  "instruction": {
+    "$file": "instruction.md"
+  },
+  "toolsets": [
+    "WORKSPACE_CLI",
+    "WEB_SEARCH"
+  ],
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "summary": {"type": "string"},
+      "fetched": {"type": "integer"},
+      "kept": {"type": "integer"},
+      "rejected": {"type": "integer"}
+    },
+    "required": ["summary"]
+  },
+  "permissions": {
+    "grants": [
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "sources",
+        "permission_ids": ["datastore.record.read", "datastore.table.read", "datastore.record.write"]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "source_items",
+        "permission_ids": ["datastore.record.read", "datastore.table.read", "datastore.record.write"]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "founders",
+        "permission_ids": ["datastore.record.read", "datastore.table.read"]
+      },
+      {
+        "resource_type": "folder",
+        "resource_name": "/playbook",
+        "permission_ids": ["folder.read"]
+      },
+      {
+        "resource_type": "function",
+        "resource_name": "fetch_items",
+        "permission_ids": ["function.execute"]
+      }
+    ]
+  }
+}

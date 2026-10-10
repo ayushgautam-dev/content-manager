@@ -1,0 +1,31 @@
+{
+  "name": "scan_sources",
+  "type": "API",
+  "visibility": "POD",
+  "description": "Scan Google News (in each topic's region and language) and Reddit for every active topic and store new items as `signals`. Records what each source returned, and any errors, on the topic.",
+  "code": {
+    "$file": "code.py"
+  },
+  "permissions": {
+    "grants": [
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "signals",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read",
+          "datastore.record.write"
+        ]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "topics",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read",
+          "datastore.record.write"
+        ]
+      }
+    ]
+  }
+}

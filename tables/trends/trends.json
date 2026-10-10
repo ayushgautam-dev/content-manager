@@ -1,0 +1,57 @@
+{
+  "name": "trends",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "visibility": "POD",
+  "columns": [
+    {
+      "name": "day",
+      "required": true,
+      "type": "DATE"
+    },
+    {
+      "max_length": 200,
+      "name": "title",
+      "required": true,
+      "type": "TEXT"
+    },
+    {
+      "max_length": 2000,
+      "name": "summary",
+      "type": "TEXT"
+    },
+    {
+      "max_length": 1000,
+      "name": "why_it_matters",
+      "type": "TEXT"
+    },
+    {
+      "max_length": 1000,
+      "name": "debate",
+      "type": "TEXT"
+    },
+    {
+      "name": "heat",
+      "type": "INTEGER"
+    },
+    {
+      "name": "topic_ids",
+      "type": "JSON"
+    },
+    {
+      "name": "sources",
+      "type": "JSON"
+    },
+    {
+      "default": "live",
+      "name": "status",
+      "options": [
+        "live",
+        "fading",
+        "archived"
+      ],
+      "type": "ENUM"
+    }
+  ],
+  "config": {}
+}

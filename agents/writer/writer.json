@@ -1,0 +1,118 @@
+{
+  "name": "writer",
+  "visibility": "POD",
+  "description": "Writes each person's LinkedIn posts from an idea, a source item, a news story or a note, designs and renders the image or carousel in their brand, revises on request, and learns their voice from every edit.",
+  "instruction": {
+    "$file": "instruction.md"
+  },
+  "toolsets": [
+    "WORKSPACE_CLI",
+    "WEB_SEARCH"
+  ],
+  "permissions": {
+    "grants": [
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "founders",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read"
+        ]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "drafts",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read",
+          "datastore.record.write"
+        ]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "signals",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read"
+        ]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "sparks",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read",
+          "datastore.record.write"
+        ]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "topics",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read",
+          "datastore.record.write"
+        ]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "trends",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read"
+        ]
+      },
+      {
+        "resource_type": "folder",
+        "resource_name": "/people",
+        "permission_ids": [
+          "folder.read",
+          "folder.write"
+        ]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "ideas",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read",
+          "datastore.record.write"
+        ]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "source_items",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read",
+          "datastore.record.write"
+        ]
+      },
+      {
+        "resource_type": "datastore_table",
+        "resource_name": "sources",
+        "permission_ids": [
+          "datastore.record.read",
+          "datastore.table.read",
+          "datastore.record.write"
+        ]
+      },
+      {
+        "resource_type": "folder",
+        "resource_name": "/playbook",
+        "permission_ids": [
+          "folder.read",
+          "folder.write"
+        ]
+      },
+      {
+        "resource_type": "folder",
+        "resource_name": "/brand",
+        "permission_ids": [
+          "folder.read",
+          "folder.write"
+        ]
+      }
+    ]
+  }
+}

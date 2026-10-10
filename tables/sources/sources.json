@@ -1,0 +1,22 @@
+{
+  "name": "sources",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "visibility": "POD",
+  "columns": [
+    {"name": "name", "type": "TEXT", "required": true, "unique": true, "max_length": 80},
+    {"name": "tab_name", "type": "TEXT", "required": true, "max_length": 40},
+    {"name": "noun_singular", "type": "TEXT", "required": true, "max_length": 40},
+    {"name": "noun_plural", "type": "TEXT", "required": true, "max_length": 40},
+    {"name": "type", "type": "ENUM", "options": ["papers", "feeds", "web"], "required": true, "default": "web"},
+    {"name": "look_for", "type": "TEXT", "max_length": 2000},
+    {"name": "where", "type": "JSON"},
+    {"name": "standard", "type": "TEXT", "max_length": 4000},
+    {"name": "owner_handle", "type": "TEXT", "max_length": 40},
+    {"name": "active", "type": "BOOLEAN", "default": true},
+    {"name": "sort_order", "type": "INTEGER", "default": 10},
+    {"name": "last_fetched_at", "type": "DATETIME"},
+    {"name": "last_fetch", "type": "JSON"}
+  ],
+  "config": {}
+}

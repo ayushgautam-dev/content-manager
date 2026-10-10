@@ -1,0 +1,133 @@
+{
+  "name": "sparks",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "visibility": "POD",
+  "columns": [
+    {
+      "name": "day",
+      "required": true,
+      "type": "DATE"
+    },
+    {
+      "name": "owner",
+      "type": "USER"
+    },
+    {
+      "max_length": 40,
+      "name": "owner_handle",
+      "required": true,
+      "type": "TEXT"
+    },
+    {
+      "name": "stream",
+      "options": [
+        "sources",
+        "world",
+        "you"
+      ],
+      "required": true,
+      "type": "ENUM"
+    },
+    {
+      "name": "kind",
+      "options": [
+        "behind_scenes",
+        "customer",
+        "framework",
+        "hiring",
+        "lesson",
+        "milestone",
+        "myth",
+        "question",
+        "story",
+        "finding",
+        "take"
+      ],
+      "required": true,
+      "type": "ENUM"
+    },
+    {
+      "max_length": 600,
+      "name": "angle",
+      "required": true,
+      "type": "TEXT"
+    },
+    {
+      "max_length": 400,
+      "name": "hook",
+      "type": "TEXT"
+    },
+    {
+      "max_length": 1500,
+      "name": "outline",
+      "type": "TEXT"
+    },
+    {
+      "max_length": 600,
+      "name": "why_now",
+      "type": "TEXT"
+    },
+    {
+      "name": "evidence",
+      "type": "JSON"
+    },
+    {
+      "name": "format",
+      "options": [
+        "text",
+        "image",
+        "carousel",
+        "video"
+      ],
+      "type": "ENUM"
+    },
+    {
+      "max_length": 120,
+      "name": "pillar",
+      "type": "TEXT"
+    },
+    {
+      "name": "fresh_until",
+      "type": "DATETIME"
+    },
+    {
+      "name": "score",
+      "type": "FLOAT"
+    },
+    {
+      "name": "trend_id",
+      "type": "UUID"
+    },
+    {
+      "default": "new",
+      "name": "status",
+      "options": [
+        "new",
+        "saved",
+        "drafted",
+        "dismissed"
+      ],
+      "required": true,
+      "type": "ENUM"
+    },
+    {
+      "max_length": 300,
+      "name": "dismiss_reason",
+      "type": "TEXT"
+    },
+    {
+      "name": "draft_id",
+      "type": "UUID"
+    },
+    {
+      "name": "item_id",
+      "type": "UUID"
+    },
+    {
+      "name": "image_idea",
+      "type": "TEXT"
+    }
+  ],
+  "config": {}
+}
